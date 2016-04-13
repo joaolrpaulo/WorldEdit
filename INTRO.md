@@ -7,11 +7,11 @@ This project is for a college subject (Software Arquitecture), and we want achie
 some goals like:
 
 * [4+1 Architectural view model](https://en.wikipedia.org/wiki/4%2B1_architectural_view_model)
-  * Logical view
-  * Development view
-  * Process view
-  * Physical view
-  * Scenarios
+  * [Logical view]()
+  * [Development view]()
+  * [Process view]()
+  * [Physical view]()
+  * [Scenarios]()
 
 
 [WorldEdit? What it is?](http://wiki.sk89q.com/wiki/WorldEdit)
