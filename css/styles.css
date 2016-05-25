@@ -10,53 +10,90 @@ author: bootply.com
 */
 
 body {
- padding-top:50px;
+    padding-top:30px;
+    font-family: 'Roboto', sans-serif;
 }
 
-#masthead { 
- min-height:250px;
+#masthead {
+    min-height:150px;
 }
 
 #masthead h1 {
- font-size: 30px;
- line-height: 1;
- padding-top:20px;
+    font-size: 30px;
+    line-height: 1;
+    padding-top:20px;
 }
 
 #masthead .well {
- margin-top:8%;
+    margin-top:8%;
 }
 
 @media screen and (min-width: 768px) {
-  #masthead h1 {
-    font-size: 50px;
-  }
+    #masthead h1 {
+        font-size: 50px;
+    }
 }
 
 .navbar-bright {
- background-color:#111155;
- color:#fff;
+    background-color:#111155;
+    color:#fff;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: unset;
+    color: #fff;
+}
+
+.nav>li>a:focus {
+    background-color: unset;
+    color: #a2d3f2;
 }
 
 .affix-top,.affix{
- position: static;
+    position: static;
 }
 
-@media (min-width: 979px) {
-  #sidebar.affix-top {
-    position: static;
-  	margin-top:30px;
-  	width:228px;
-  }
-  
-  #sidebar.affix {
-    position: fixed;
-    top:70px;
-    width:228px;
-  }
+html, body, .container, .row {
+    height: 100%;
+}
+
+#leftCol > img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.tree > .tree {
+    background-color: #2a6496;
+}
+
+#leftCol {
+    text-align: center;
+    color: #fff !important;
+}
+
+a {
+    color: #a2d3f2; /* #9ccdec */
+}
+
+#sidebar {
+    margin-top: 30px;
+}
+
+@media (min-width: 992px) {
+    #leftCol {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        display: block;
+        background-color: #0073b0;
+    }
 }
 
 #sidebar li.active {
-  border:0 #eee solid;
-  border-right-width:5px;
+    border:0 #eee solid;
+    border-right-width:5px;
+    background-color: #2a6496;
 }
