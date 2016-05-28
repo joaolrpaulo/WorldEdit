@@ -6,20 +6,43 @@ YAML is a encoding format that makes data more readable by human beings, it was 
 YAML (pronounced as "yammel"), was designed with a very proper idea, that every data could be represented by a set of list, hashes, and simple values.
 YAML only uses unicode characters (UTF-8 and UTF-16)
 
-Examples:
+YAML is relatively simple to use. The respective file holds the information in a indented format like the example below:
+
 ```
 	Blocks:
- 		- Grass
- 		- Sand
- 		- Stone
+ 	- Grass
+ 	- Sand
+ 	- Stone
 
 	Users:
- 		- Pedro
- 		- Marco
- 		- João
- 		- Andreia
+ 	  Pedro: '- Developer'
+ 	  Marco: '* Second Developer'
+ 	  João: '# Developer'
+ 	  Andreia: '\ Developer'
 ```
 
+Within the domain of the Java language, YAML fields can be easily accessed using:
 
-In the context of the project that we have been reviewing during this semester, YAML is used to store (Data of course! :D) some configurations related to multiple aspects, such as User data, world data, blocks data, command restrictions, zone restrictions, among others.
+```java
+	yamlFile.getStringList("Blocks");
+	// Will return a list ['Grass', 'Sand', 'Stone']
+```
+
+```java
+	yamlFile.getConfigurationSection('Users').getKeys(false)
+	// Will return ['Pedro', 'Marco', 'Joao', 'Andreia']
+	// We can now do:
+	
+	yamlFile.getString("Users.Pedro");
+	// Will return '- Developer'
+	
+```
+
+In the context of the project that we have been reviewing during this semester, YAML is used to store some configurations related to multiple aspects such as:
+* User data
+* World data 
+* Blocks data 
+* Command restrictions
+* Zone restrictions, among others.
+
 An more particular example can be found at [config.yml](https://github.com/sk89q/WorldEdit/blob/master/worldedit-bukkit/src/main/resources/defaults/config.yml)
