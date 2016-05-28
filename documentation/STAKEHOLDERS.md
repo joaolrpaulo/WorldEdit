@@ -7,6 +7,7 @@ It's almost impossible for the community to imagine world or block management wi
 of users depending on it `13,963,291 downloads on 28/05/2016`.
 
 ![alt-text](http://i.imgur.com/n3Ixw3g.jpg)
+Figure 1 - An example of a complex architecture very hard to implement manually.
 
 ## Developers
 
