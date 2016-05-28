@@ -20,7 +20,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7 col-md-offset-3">
-        <img src="./img/logo.png">
+        <img src="./img/logo2.png">
         <h2>Unofficial Documentation</h2>
         <small>Pedro Lourenço, João Paulo, Marco Pontes e Andreia Costa</small>
       </div>
@@ -45,43 +45,52 @@
           </ul>
         </li>
         <li class="tree">
-          <a class="tree-toggle" href="#">StakeHolders <span class="caret"></span></a>
+          <a class="tree-toggle" href="#">Features <span class="caret"></span></a>
           <ul class="nav tree">
-            <li><a href="#sec2">Developers</a></li>
-            <li><a href="#sec3">Users</a></li>
+            <li><a href="#sec2">Region Operations</a></li>
+            <li><a href="#sec3">Clipboard</a></li>
+            <li><a href="#sec4">Generation</a></li>
+            <li><a href="#sec5">Utility</a></li>
+          </ul>
+        </li>
+        <li class="tree">
+          <a class="tree-toggle" href="#">Stakeholders <span class="caret"></span></a>
+          <ul class="nav tree">
+            <li><a href="#sec6">Developers</a></li>
+            <li><a href="#sec7">Users</a></li>
           </ul>
         </li>
         <li class="tree">
           <a class="tree-toggle" href="#">Architecture <span class="caret"></span></a>
           <ul class="nav tree">
-            <li><a href="#sec4">Logical View</a></li>
-            <li><a href="#sec5">Development View</a></li>
-            <li><a href="#sec6">Process View</a></li>
-            <li><a href="#sec7">Physical View</a></li>
-            <li><a href="#sec8">Scenarios</a></li>
+            <li><a href="#sec8">Logical View</a></li>
+            <li><a href="#sec9">Development View</a></li>
+            <li><a href="#sec10">Process View</a></li>
+            <li><a href="#sec11">Physical View</a></li>
+            <li><a href="#sec12">Scenarios</a></li>
           </ul>
         </li>
-        <li><a href="#sec9">Improving WorldEdit</a></li>
-        <li><a href="#sec10">Conclusion</a></li>
-        <li><a href="#sec11">Bibliography</a></li>
+        <li><a href="#sec13">Improving WorldEdit</a></li>
+        <li><a href="#sec14">Conclusion</a></li>
+        <li><a href="#sec15">Bibliography</a></li>
       </ul>
     </div><!--/left-->
 
     <!--right-->
     <div class="col-md-9 col-md-offset-3">
-      <h2>Introduction</h2>
+      <h1>Introduction</h1>
       <hr>
       <p>This project is for a college subject (Software Arquitecture), and we want achieve some goals like:</p>
       <p>Main description here</p>
+      <p>We want to focus on the mechanical part of this project.</p>
+
 
       <h2 id="sec0">User View</h2>
       <hr>
-
       <h3>World Edit, What is it?</h3>
       <hr>
       <p>
         WorldEdit is a worldwide known framework for Minecraft, between many features, it holds some interesting ones:
-
       <ul>
         <li>Select a region of a map (like pinpoint two positions in map)</li>
         <li>Fix map problems, such as broken water, missing snow, broken walls and much more!</li>
@@ -90,37 +99,150 @@
         <li>Create objects with one click, e.g, trees, spheres, animals</li>
       </ul>
 
-      <h3>Features Summary</h3>
-      <hr>
 
-      <h4>Region Operations</h4>
+      <h2 id="sec1">Developer View</h2>
       <hr>
+      <p>Include here chunk explanation.</p>
 
+
+
+      <h2>Features <small>Very summarized overview with main functions</small></h2>
+      <hr>
+      <p>We will omit most command sintaxe. However, a detailed overview of all commands
+        can be found in the <a href="http://wiki.sk89q.com/wiki/WorldEdit">official documentation</a>.</p>
+
+
+      <h3 id="sec2">Region Operations</h3>
+      <hr>
+      <p>It's possible to perform a long range of region operations with World Edit.</p>
+      <p>To perform those kind of operations, the user is required to select a Cuboid area. This is done by selecting
+      two points which will create a rectangular selecion (other shapes and formats can also be used).</p>
+      <p>Using the selected area, we can perform changes like:</p>
+      <ul>
+        <li>Setting Blocks</li>
+        <li>Replacing Blocks (example below)</li>
+        <li>Create walls</li>
+        <li>Place overlays over a range of blocks</li>
+        <li>Stacking (example below)</li>
+        <li>Move a set of blocks</li>
+        <li>Smooth an area, for example, a rough mountain</li>
+        <li>Naturalize, make an area look more natural with grass and dirt</li>
+        <li>Placing flora, scatter tall grass and flowers for grass or cactus for sand</li>
+        <li>Deform regions, applying a user defined equation</li>
+      </ul>
+      <div class="blockquote-box blockquote-primary">
+        <h4>
+          Region Selecion</h4>
+        <p>
+          Usage: //wand <small>[Gives user an item that can be used to flag first position (left click) and second position (right click)]</small>
+        </p><p>Usage: //pos1 or //pos2 <small>[Selects first and second positions]</small>
       </p>
+      </div>
+      <img src="img/ingame/cuboid.png">
+
+      <br><br>
+      <p>Some examples of region operations are:</p>
       <div class="row">
         <div class="col-md-6">
           <div class="panel panel-default">
-            <div class="panel-heading"><h3>Setting/Replacing Blocks</h3></div>
+            <div class="panel-heading">
+              <h3>Setting/Replacing Blocks</h3>
+              <small>//replace [list-of-blocks-to-replace] [block-to-replace-with]</small>
+            </div>
             <div class="panel-body">
-              <a class="fancybox" rel="group" href="./img/ingame/replaceblocks.png">
-                <img class="img-responsive" src="./img/ingame/replaceblocks.png">
+              <a class="fancybox" rel="group" href="img/ingame/replaceblocks.png">
+                <img width="418" height="350" src="img/ingame/replaceblocks.png">
               </a>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="panel panel-default">
-            <div class="panel-heading"><h3>Hello.</h3></div>
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-              Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-              dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-              Aliquam in felis sit amet augue.
+            <div class="panel-heading">
+              <h3>Stacking</h3>
+              <small>//stack [count] [direction]</small>
+            </div>
+            <div class="panel-body">
+              <a class="fancybox" rel="group" href="img/ingame/stacking.jpg">
+                <img width="418" height="350" src="img/ingame/stacking.jpg">
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      <h2 id="sec2">Architecture</h2>
+
+      <h3 id="sec3">Clipboard</h3>
+      <hr>
+      <p>Some examples of clipboard operations are:</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>Copy/Paste Areas</h3>
+              <small>//copy //paste [-aso]</small>
+            </div>
+            <div class="panel-body">
+              <a class="fancybox" rel="group" href="img/ingame/copypaste.png">
+                <img width="418" height="350" src="img/ingame/copypaste.png">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>Stacking</h3></div>
+            <div class="panel-body">
+              <a class="fancybox" rel="group" href="img/ingame/stacking.jpg">
+                <img width="418" height="350" src="img/ingame/stacking.jpg">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <h3 id="sec4">Generation</h3>
+      <hr>
+
+
+      <h3 id="sec5">Utility</h3>
+      <hr>
+
+
+
+      <h2>Stakeholders</h2>
+      <hr>
+      <p>Text</p>
+
+
+      <h3 id="sec6">Developers</h3>
+      <hr>
+      <div class="row no-gutter">
+        <div class="col-md-6">
+          <img class="img-responsive" src="img/ingame/contributor1.png">
+        </div>
+        <div class="col-md-6">
+          <img class="img-responsive" src="img/ingame/contributor2.png">
+        </div>
+      </div>
+      <div class="row no-gutter">
+        <div class="col-md-6">
+          <img class="img-responsive" src="img/ingame/contributor3.png">
+        </div>
+        <div class="col-md-6">
+          <img class="img-responsive" src="img/ingame/contributor4.png">
+        </div>
+      </div>
+
+
+      <h3 id="sec7">Users</h3>
+      <hr>
+      <p>Text</p>
+
+
+
+      <h2>Architecture</h2>
       <hr>
       <p>
         Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -135,12 +257,9 @@
         <div class="col-md-4"><img src="./img/Use%20Cases.png" class="img-responsive"></div>
       </div>
 
-      <h4><i class="fa fa-caret-right"></i> Use Cases</h4>
+
+      <h3 id="sec8">Logical View</h3>
       <hr>
-
-      <div class="col-md-12" align="center"><img src="./img/Use%20Cases.png" class="img-responsive"></div>
-
-      <h2 id="sec3">Section 3</h2>
       <p>
         Images are responsive sed @mdo but sum are more fun peratis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -148,13 +267,37 @@
         eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
         sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
         Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut..</p>
-      <p>
-        Fos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut..</p>
 
 
-      <h2 id="sec4">Section 4</h2>
+      <h3 id="sec9">Development View</h3>
+      <hr>
+      <p>Text</p>
+
+
+      <h3 id="sec10">Process View</h3>
+      <hr>
+      <p>Text</p>
+
+
+      <h3 id="sec11">Physical View</h3>
+      <hr>
+      <p>Text</p>
+
+
+      <h3 id="sec12">Scenarios</h3>
+      <hr>
+      <div class="col-md-12" align="center"><img src="./img/Use%20Cases.png" class="img-responsive"></div>
+
+
+
+      <h2>Storage</h2>
+      <hr>
+      <p>YAML here</p>
+
+
+
+      <h2 id="sec13">Improving WorldEdit</h2>
+      <hr>
       <p>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -163,9 +306,17 @@
         sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
         Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut.</p>
 
+
+
+      <h2 id="sec14">Conclusion</h2>
       <hr>
-      <h4><a href="http://www.bootply.com/Gygh9swISB">Edit on Bootply</a></h4>
+      <p>Text here</p>
+
+
+
+      <h2 id="sec15">Bibliography</h2>
       <hr>
+      <p>Text here</p>
 
     </div><!--/right-->
   </div><!--/row-->
