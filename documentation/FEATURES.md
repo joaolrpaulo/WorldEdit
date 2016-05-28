@@ -31,10 +31,12 @@ Usage: //pos1 or //pos2 [Selects first and second positions]
 
 ### Setting/Replacing Blocks
 `//replace [list-of-blocks-to-replace] [block-to-replace-with]`
+
 ![alt-text](https://raw.githubusercontent.com/joaolrpaulo/WorldEdit/introduction/documentation/img/ingame/replaceblocks.png)
 
 ### Stacking
 `//stack [count] [direction]`
+
 ![alt-text](https://raw.githubusercontent.com/joaolrpaulo/WorldEdit/introduction/documentation/img/ingame/stacking.jpg)
 
 ## Clipboard
