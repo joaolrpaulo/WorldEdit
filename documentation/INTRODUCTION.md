@@ -1,7 +1,9 @@
-![WorldEdit](https://wiki.nitrado.net/en/images/7/7a/Pluginlogo-WorldEdit.png)
+![WorldEdit](img/logo2.png)
 =========
 
-### Propose of this project
+# Introduction
+
+## Propose of this project
 
 This project is for a college subject (Software Arquitecture), and we want achieve
 some goals like:
@@ -14,8 +16,7 @@ some goals like:
   * [Scenarios]()
 
 
-[WorldEdit? What it is?](http://wiki.sk89q.com/wiki/WorldEdit)
-------------------------
+### [WorldEdit? What it is?](http://wiki.sk89q.com/wiki/WorldEdit)
 
 WorldEdit is a worldwide known framework for Minecraft, between many features,
 it holds some interesting ones:
@@ -27,3 +28,7 @@ it holds some interesting ones:
 * Create objects with one click, e.g, trees, spheres, animals
 
 <sub><sup>Current Branches we worked on: [introduction](https://github.com/joaolrpaulo/WorldEdit/tree/introduction)</sup></sub>
+
+## User View
+
+## Developer View
