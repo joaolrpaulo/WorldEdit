@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f80db14-2ca6-48ea-9354-a9f1e707ec53" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/ingame/contributors.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
@@ -261,12 +262,12 @@
       <workItem from="1464395501820" duration="3597000" />
       <workItem from="1464461703282" duration="408000" />
       <workItem from="1464463747813" duration="308000" />
-      <workItem from="1464477324188" duration="734000" />
+      <workItem from="1464477324188" duration="823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14817000" />
+    <option name="totallyTimeSpent" value="14906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
