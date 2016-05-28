@@ -1,13 +1,12 @@
 # Storage
 
 ## YAML
-YAML é uma formato de codificação de dados para facilitar a sua leitura por humanos, foi inspirado em linguagens como XML, Python, Perl, assim como no Internet Message Protocol.
-Foi proposto em 2000 por Clark Evans, juntamente com Brian Ingerson e Oren Ben-Kiki.
+YAML is a encoding format that makes data more readable by human beings, it was inspired in languages suchs as XML, Python, Perl, and Internet Message Protocol. It was created by Clark Evans, Brian Ingerson and Oren Ben-Kiki, by the year of 2000.
 
-YAML foi desenvolvido na base de que todos os dados, podem ser representados por listas, mapas (hashes), e valores simples.
-Utiliza apenas caracteres UTF (unicode).
+YAML (pronounced as "yammel"), was designed with a very proper idea, that every data could be represented by a set of list, hashes, and simple values.
+YAML only uses unicode characters (UTF-8 and UTF-16)
 
-Exemplos:
+Examples:
 ```
 	Blocks:
  		- Grass
@@ -22,5 +21,5 @@ Exemplos:
 ```
 
 
-No contexto do projecto que estivemos a analisar durante este semestre, YAML usa-se para gravar configurações relativas a varios aspectos, tais como dados de utilizadores, blocos do mundo, restrições a comandos, entre outros.
-Um exemplo  destes ficheiros pode ser encontrado no ficheiro [config.yml](https://github.com/sk89q/WorldEdit/blob/master/worldedit-bukkit/src/main/resources/defaults/config.yml)
+In the context of the project that we have been reviewing during this semester, YAML is used to store (Data of course! :D) some configurations related to multiple aspects, such as User data, world data, blocks data, command restrictions, zone restrictions, among others.
+An more particular example can be found at [config.yml](https://github.com/sk89q/WorldEdit/blob/master/worldedit-bukkit/src/main/resources/defaults/config.yml)
