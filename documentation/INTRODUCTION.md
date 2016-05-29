@@ -29,7 +29,6 @@ It holds some interesting features:
 * Change blocks from one type to another, like from grass to diamond
 * Create objects with one click, e.g, trees, spheres, animals
 
-In this chapter, we will study the way that WorldEdit is organized, with help from different architecture views (more exactly, 4+1 Architecture view), and his stackholders. During this analysis, we pretend to discuss about how we could improved this framework, aswell as giving some help to sk89q (WorldEdit main developer), and his team.
-
+We aim to include different architectural views (more exactly, 4+1 Architecture view),and his stakeholders. During this analysis, we pretend to discuss about how we could improved this framework, contributing to the software and future developers.
 
 <sub><sup>Current Branches we worked on: [introduction](https://github.com/joaolrpaulo/WorldEdit/tree/introduction)</sup></sub>
