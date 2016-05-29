@@ -23,13 +23,18 @@
     <div class="row">
       <div class="col-md-7 col-md-offset-3">
         <img src="./img/logo2.png">
-        <h2>An architectural approach</h2>
+        <h2>An architectural approach <small>Software Architecture</small></h2>
         <small>
-          <a href="https://github.com/joaolrpaulo/">Pedro Lourenço</a>,
-          <a href="https://github.com/pedroo21">João Paulo</a>,
+          <a href="https://github.com/pedroo21/">Pedro Lourenço</a>,
+          <a href="https://github.com/joaolrpaulo">João Paulo</a>,
           <a href="https://github.com/marcopontes">Marco Pontes</a> e Andreia Costa
         </small>
+        <p class="small">Oriented by Rui Sereno e Rui Maranhão</p>
         <p class="small">May 28, 2016</p>
+      </div>
+      <div class="col-md-2 text-center">
+        <img src="http://www.idpasc.lip.pt/LIP/events/2015_workshop_foundations/images/logo_FCUP.jpg"
+             class="img-responsive" align="center">
       </div>
     </div>
   </div><!--/container-->
@@ -40,8 +45,8 @@
   <div class="row">
     <!--left-->
     <div class="col-md-3" id="leftCol">
-      <img src="http://www.idpasc.lip.pt/LIP/events/2015_workshop_foundations/images/logo_FCUP.jpg"
-           class="img-responsive img-thumbnail">
+      <img src="img/architecture-2.jpg"
+           class="img-responsive circle-image">
 
       <ul class="nav nav" id="sidebar">
         <li class="tree">
@@ -112,13 +117,13 @@
 
 
 
-      <h2>Features <small>Very summarized overview with main functions</small></h2>
+      <h1>Features <small>Very summarized overview with main functions</small></h1>
       <hr>
       <p>We will omit most command sintaxe. However, a detailed overview of all commands
         can be found in the <a href="http://wiki.sk89q.com/wiki/WorldEdit">official documentation</a>.</p>
 
 
-      <h3 id="sec2">Region Operations</h3>
+      <h2 id="sec2">Region Operations</h2>
       <hr>
       <p>It's possible to perform a long range of region operations with World Edit.</p>
       <p>To perform those kind of operations, the user is required to select a Cuboid area. This is done by selecting
@@ -178,8 +183,12 @@
       </div>
 
 
-      <h3 id="sec3">Clipboard</h3>
+      <h2 id="sec3">Clipboard</h2>
       <hr>
+      <p>WorldEdit provides the ability to have a clipboard that allows users to copy, paste and even save an area.
+      These cuboid areas can be saved into a file (<i>schematic files</i>) under a storage at
+        <code>\plugins\WorldEdit\schematics\</code> and loaded at any time with a simple command. The copy-paste
+      functionality saves the cuboid area in cache, in the user Local Session until we decide to paste it.</p>
       <p>Some examples of clipboard operations are:</p>
       <div class="row">
         <div class="col-md-6">
@@ -197,10 +206,13 @@
         </div>
         <div class="col-md-6">
           <div class="panel panel-default">
-            <div class="panel-heading"><h3>Stacking</h3></div>
+            <div class="panel-heading">
+              <h3>Schematics</h3>
+              <small>//schematic|schem save|load [format] [filename]</small>
+            </div>
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/stacking.jpg">
-                <img width="418" height="350" src="img/ingame/stacking.jpg">
+                <img width="418" height="350" src="img/ingame/schematic.png">
               </a>
             </div>
           </div>
@@ -208,21 +220,21 @@
       </div>
 
 
-      <h3 id="sec4">Generation</h3>
+      <h2 id="sec4">Generation</h2>
       <hr>
 
 
-      <h3 id="sec5">Utility</h3>
+      <h2 id="sec5">Utility</h2>
       <hr>
 
 
 
-      <h2>Stakeholders</h2>
+      <h1>Stakeholders</h1>
       <hr>
       <p>Text</p>
 
 
-      <h3 id="sec6">Developers</h3>
+      <h2 id="sec6">Developers</h2>
       <hr>
       <div class="row no-gutter">
         <div class="col-md-6">
@@ -242,13 +254,13 @@
       </div>
 
 
-      <h3 id="sec7">Users</h3>
+      <h2 id="sec7">Users</h2>
       <hr>
       <p>Text</p>
 
 
 
-      <h2>Architecture</h2>
+      <h1>Architecture</h1>
       <hr>
       <p>
         At this diagram we tried to only represent the important classes among all the project as this is a
@@ -272,12 +284,67 @@
         fundamental for the analysis.</p>
 
 
-      <h3 id="sec8">Logical View</h3>
+      <h2 id="sec8">Logical View</h2>
       <hr>
+      <p>This is very important to explain stuff like "Command Manager", "Local Sessions" and "Edit Sessions".
+        Describe here</p>
+
+      <h3>Command Manager</h3>
+      <hr>
+      <p>WorldEdit's way of managing commands is very sagaciously organized. From our study and previous knowledge
+      with Bukkit, we found out this command architecture is also featured in other author's plugins.
+      One of the main reasons is the simplicity of organizing all the required commands without having them all in a
+      class with a massive amount of <i>if statements</i>.</p>
+
+      <p>It consists in having a manager for commands (Command Manager Class) which will map each command string or alias
+      with corresponding method. The manager can register any command class, and will fetch method annotations like
+      the example below:</p>
+
+      <code style=display:block;white-space:pre-wrap>
+        @Command<span style="color: black;">(
+          aliases = { <span style="color: blue;">"/line"</span> },
+          usage = <span style="color: blue;">"[block] [thickness]"</span>,
+          desc = <span style="color: blue;">"Draws a line segment between cuboid selection corners"</span>,
+          help = <span style="color: blue;">"Help will be described here"</span>,
+          flags = <span style="color: blue;">"h"</span>,
+          min = <span style="color: orange;">1</span>,
+          max = <span style="color: orange;">2</span>
+        )
+        </span>
+        @CommandPermissions("worldedit.region.line")
+        @Logging(REGION)
+        <span style="color: darkblue;">public void</span> <span style="color: black;">line</span>(arguments) <span style="color: black;">{</span>
+          <span style="color: grey;">// Command method will describe here</span>
+        <span style="color: black;">}</span>
+      </code>
+
+      <p></p>
+      <p>Command Manager will register alias <i>"/line"</i> with method <i>"line(args)"</i>. Next time the user inputs a
+      command, manager will (call a dispatcher to) find which stored method is related to the input
+      (methods that are mapped with their aliases in a data structure):</p>
+
+      <pre>
+        <span style="color: blue;">MappedCommands</span>&lt;<span style="color: orange;">String, Method</span>&gt; contains
+
+        &lt;<span style="color: orange;">"line"</span>, <span style="color: blue;">public void</span> line(arguments)</span>&gt;</pre>
+
+      <p>This architecture is extremly usefull to avoid code polution and keep different commands separated per class or
+      category.</p>
+
+      <h3>Local Session</h3>
+      <hr>
+      A brief introduction to local sessions and has child:
+
+      <h4>Edit Session</h4>
+      <hr>
+      Something about what this is.
 
 
-      <h3 id="sec9">Development View</h3>
+
+      <h2 id="sec9">Development View</h2>
       <hr>
+      <p>We want to talk about the adapters and what they are usefull for. The separation of contents and easy to make
+      compatible by creating a new adapter.</p>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Development%20View.png">
          <img class="img-responsive" src="img/Development%20View.png">
@@ -285,8 +352,9 @@
       </div>
 
 
-      <h3 id="sec10">Process View</h3>
+      <h2 id="sec10">Process View</h2>
       <hr>
+      <p>We want to explain the process of WorldEdit when doing something.</p>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Activity%20View.png">
           <img class="img-responsive margin-corners" src="img/Activity%20View.png">
@@ -294,8 +362,9 @@
       </div>
 
 
-      <h3 id="sec11">Physical View</h3>
+      <h2 id="sec11">Physical View</h2>
       <hr>
+      <p>No idea here, I don't remember what this was about.</p>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Development%20View.png">
           <img class="img-responsive" src="img/Development%20View.png">
@@ -303,8 +372,9 @@
       </div>
 
 
-      <h3 id="sec12">Scenarios</h3>
+      <h2 id="sec12">Scenarios</h2>
       <hr>
+      <p>We want to talk about what we can do with WorldEdit.</p>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Use%20Cases.png">
           <div class="col-md-12" align="center"><img src="img/Use%20Cases.png"></div>
@@ -313,9 +383,9 @@
 
 
 
-      <h2>Storage</h2>
+      <h1>Storage</h1>
       <hr>
-      <h3>YAML</h3>
+      <h2>YAML</h2>
       <hr>
       <p>YAML is a encoding format that makes data more readable by human beings,
         it was inspired in languages suchs as XML, Python, Perl, and Internet Message Protocol.
@@ -337,16 +407,16 @@
           João: '# Developer'
           Andreia: '\ Developer'</pre>
       <p>Within the domain of the Java language, YAML fields can be easily accessed using:</p>
-      <code style=display:block;white-space:pre-wrap>
-        yamlFile.getStringList("Blocks");
+      <code style=display:block;white-space:pre-wrap;>
+        <span style="color: darkorange;">yamlFile.getStringList</span>(<span style="color: blue">"Blocks"</span>);
         // Will return a list ['Grass', 'Sand', 'Stone']
       </code>
       <code style=display:block;white-space:pre-wrap>
-        yamlFile.getConfigurationSection('Users').getKeys(false)
+        <span style="color: darkorange;">yamlFile.getConfigurationSection</span>(<span style="color: blue">'Users'</span>)<span style="color: darkorange;">.getKeys</span>(<span style="color: blue;">false</span>)
         // Will return ['Pedro', 'Marco', 'Joao', 'Andreia']
         // We can now do:
 
-        yamlFile.getString("Users.Pedro");
+        <span style="color: darkorange;">yamlFile.getString</span>(<span style="color: blue;">"Users.Pedro"</span>);
         // Will return '- Developer'
       </code>
       <p></p>
@@ -364,9 +434,9 @@
 
 
 
-      <h2 id="sec13">Improving WorldEdit</h2>
+      <h1 id="sec13">Improving WorldEdit</h1>
       <hr>
-      <h3>The Problem</h3>
+      <h2>The Problem</h2>
       <hr>
       <p>Minecraft, more specific, the Bukkit Adapter has known limitations related to asynchronous world modification.
         If we try to run block modifications in a separate thread we will get an exception like:</p>
@@ -386,7 +456,7 @@
 
       <p>The server will stop responding after a few seconds, possibly causing world chunk errors.</p>
 
-      <h3>The Solution</h3>
+      <h2>The Solution</h2>
       <hr>
       <p>
         After studying the problem, it's possible to understand we can archieve an asynchronous operation
@@ -414,15 +484,37 @@
 
 
 
-      <h2 id="sec14">Conclusion</h2>
+      <h1 id="sec14">Conclusion <small>What did we learn?</small></h1>
       <hr>
-      <p>Text here</p>
+      <p>WorldEdit is a very complex project. We enriched a lot of our knowledge about organized software
+      architecture by getting deeper into this project. It leaves us surprised studying such clever
+      code organization where most of the times people tend to find fixes.</p>
 
+      <p>In the logical and development architectures, more specifically, the managers and adapters, we were able
+      to learn a new diverse way of how to create multi-platform compatible software using adapters. Along with that,
+      we saw new ideas to centralize complex command classes, like the Command Manager does.</p>
 
+      <p>We, programmers, are used to, in our world, start something from <b>scratch</b>. We have to make lots of
+        <b>choices</b> while building software, some of them may not be the best if we are not used to the
+        <b>environment we are programming in</b>.
+      Most of the times we end up having to create a <i>"recode" version</i> of our project because we find out we can have a
+        <b>better architecture</b> than what we started in. How many times this <s>doesn't</s> happen?</p>
 
-      <h2 id="sec15">Bibliography</h2>
-      <hr>
-      <p>Text here</p>
+      <p>In the real word, an architect cannot fail on this aspects. It can lead to a disaster and lots of
+        repercussions.</p>
+
+      <p>Programmers are always able to mold their project. But the moral in all this is that we can <b>greatly improve
+      our workflow</b> and save a lot of time if we make it right on our base software architecture. Having a <b>solid
+      architecture is the key to have a strong organized software</b>.</p>
+
+      <blockquote>
+        Although software has no mass, it does have weight, weight that can ossify any system by creating inertia to change and introducing crushing complexity.
+        <small>Grady Booch</small>
+      </blockquote>
+
+      And that's what we've learned!
+
+      <img class="img-responsive" src="img/architecture.jpg">
 
     </div><!--/right-->
   </div><!--/row-->

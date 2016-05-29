@@ -15,6 +15,24 @@ body {
     font-weight: 400;
 }
 
+.circle-image{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    display:block;
+    background-position-y:25%;
+    border: 5px solid;
+    border-color: whitesmoke;
+}
+
+h1 {
+    margin-top : 30px;
+}
+
+h2,h3,h4,h5,h6 {
+    margin-top: 20px !important;
+}
+
 .container-corners {
     margin: 30px;
 }
@@ -79,6 +97,8 @@ html, body, .container, .row {
 #leftCol {
     text-align: center;
     color: #fff !important;
+    border-right: 5px solid;
+    border-color: #1361a3;
 }
 
 a {
