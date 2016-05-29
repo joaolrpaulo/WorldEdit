@@ -21,4 +21,8 @@ As for these last two, they are needed to support multiple plugins on Minecraft,
 
 ## Physical View
 
+![Physical View](img/World Edit Deploy.png)
+
+This diagram represent where the artifacts go after being succesfully compiled and archived. At a first step after artifacts are ready, they are uploaded to multiples websites, and then users can download them, and upload the correct version to their own server.
+
 ## Scenarios
