@@ -2,6 +2,8 @@
 
 ## Logical View
 
+![Logical View](img/Logical View.png)
+
 At this diagram we tried to only represent the important classes among all the project as this is a huge project, the full class diagram wouldn't be user-friendly. 
 We tried to put all important related classes at a bucket so it will be more easy to look at and explain whats happeninng.
 
