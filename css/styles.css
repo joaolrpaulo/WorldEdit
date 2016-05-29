@@ -15,6 +15,10 @@ body {
     font-weight: 400;
 }
 
+.container-corners {
+    margin: 30px;
+}
+
 strong {
     font-weight: 700;
 }
