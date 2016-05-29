@@ -17,7 +17,11 @@ As for these last two, they are needed to support multiple plugins on Minecraft,
 
 ## Development View
 
+![Development View](img/Development View.png)
+
 ## Process View
+
+![Process View](img/Activity View.png)
 
 ## Physical View
 
