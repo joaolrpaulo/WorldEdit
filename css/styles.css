@@ -21,7 +21,7 @@ body {
     border-radius:50%;
     display:block;
     background-position-y:25%;
-    border: 5px solid;
+    border: 10px solid;
     border-color: whitesmoke;
 }
 
@@ -97,7 +97,7 @@ html, body, .container, .row {
 #leftCol {
     text-align: center;
     color: #fff !important;
-    border-right: 5px solid;
+    border-right: 10px solid;
     border-color: #1361a3;
 }
 
@@ -107,6 +107,8 @@ a {
 
 #sidebar {
     margin-top: 30px;
+    line-height: 10px;
+    font-weight: 100;
 }
 
 hr {

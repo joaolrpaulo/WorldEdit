@@ -211,7 +211,7 @@
               <small>//schematic|schem save|load [format] [filename]</small>
             </div>
             <div class="panel-body">
-              <a class="fancybox" rel="group" href="img/ingame/stacking.jpg">
+              <a class="fancybox" rel="group" href="img/ingame/schematic.jpg">
                 <img width="418" height="350" src="img/ingame/schematic.png">
               </a>
             </div>
@@ -222,11 +222,89 @@
 
       <h2 id="sec4">Generation</h2>
       <hr>
+      <p>Generation tools provide us the ability to create a set of shapes (can be generated with mathematics) up to
+      a full forest.</p>
+      <p>This section is focused in creating architectural elements, like for example a sphere or a pyramid. WorldEdit
+      is also able to generate a forest like <code>/forestgen 10</code>:</p>
+      <blockquote>The command searches the area around you, controlled by the size parameter,
+        and it will descend in elevation a bit in order to find grass or dirt (trees will only be generated
+        on top of those two blocks),
+        but it will not ever go up above your feet.</blockquote>
+      <p>The generation algoritm was made clever to develop a forest according to surrouding area conditions. However,
+      it is not possible to get 100% density (a tree in every spot) as Notch's (creator of Minecraft)
+      tree algorithm won't permit that.</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>Generate a sphere/ellipsoid</h3>
+              <small>//hsphere [block] [radius],[radius],[radius] [raised?]</small>
+            </div>
+            <div class="panel-body">
+              <a class="fancybox" rel="group" href="img/ingame/hsphere.png">
+                <img width="418" height="350" src="img/ingame/hsphere.png">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>Forest Generation</h3>
+              <small>//forestgen [size] [type] [density]</small>
+            </div>
+            <div class="panel-body">
+              <a class="fancybox" rel="group" href="img/ingame/forestgen.jpg">
+                <img width="418" height="350" src="img/ingame/forestgen.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
       <h2 id="sec5">Utility</h2>
       <hr>
-
+      <p>If we saw a lot of interesting features, it doesn't end here! Utility joins a lot of useful functions we often
+      manually struggle for. In sum, we want to distinguish tools like:</p>
+      <ul>
+        <li>Draining liquids</li>
+        <li>Filling pits</li>
+        <li>Removing annoying mobs</li>
+        <li>Extinguish fire</li>
+        <li>Brushes: build from far away</li>
+      </ul>
+      <p>One of the most interesting ones is the brushes. As the name says, we cannot only paint with it but we can
+      also generate blocks or shapes to where we are pointing to (terraforming). It also allows us to
+        smooth rough mountains and level terrains.</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>Generate spheres with a click</h3>
+              <small>//brush sphere [-h] [block] [radius]</small>
+            </div>
+            <div class="panel-body">
+              <a class="fancybox" rel="group" href="img/ingame/brushsphere.png">
+                <img width="418" height="350" src="img/ingame/brushsphere.png">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>Smooth an area</h3>
+              <small>//brush smooth [-n] [size] [iterations]</small>
+            </div>
+            <div class="panel-body">
+              <a class="fancybox" rel="group" href="img/ingame/brushsmooth.png">
+                <img width="418" height="350" src="img/ingame/brushsmooth.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
       <h1>Stakeholders</h1>
@@ -262,34 +340,35 @@
 
       <h1>Architecture</h1>
       <hr>
+      <p>This is the core part of our documentation. We aim to demystify the big tree of packages this project
+      consists on. Expand the software and provide other developers, the required knowledge
+      to be aware of the pillars it holds.</p>
       <p>
-        At this diagram we tried to only represent the important classes among all the project as this is a
-        huge project, the full class diagram wouldn't be user-friendly.
-        We tried to put all important related classes at a bucket so it will be more easy to look
-        at and explain whats happeninng.</p>
-      <p>Basically this project has three big packages (or Schemas):</p>
+        In the following diagrams we tried to only represent the important classes or packages grouped
+        among all the project as this is a very complex software.
+        A full class diagram wouldn't be user-friendly, so we created a views joining all important related classes
+        aiming to make it easier to understand and explain what's happening.</p>
+
+
+      <h2 id="sec8">Logical View <small>Key parts and functional components</small></h2>
+      <hr>
+      <p>In sum, this project has three big packages (or Schemas):</p>
 
       <ul>
         <li><a href="https://github.com/joaolrpaulo/WorldEdit/tree/introduction/worldedit-core">WorldEdit-Core
-          </a>, this is the main project. It’s independent from any adapter.</li>
+        </a>, this is the main project. It’s independent from any adapter.</li>
         <li><a href="https://github.com/joaolrpaulo/WorldEdit/tree/introduction/worldedit-bukkit">WorldEdit-Bukkit
-          </a>, the adapter redirected to the Bukkit platform.</li>
+        </a>, the adapter redirected to the Bukkit platform.</li>
         <li><a href="https://github.com/joaolrpaulo/WorldEdit/tree/introduction/worldedit-forge">WorldEdit-Forge
         </a>, the adapter redirected to the Forge platform.</li>
       </ul>
 
-      <p>As for these last two, they are needed to support multiple plugins on Minecraft,
-        responsible for loading all the required plugins and create the server-type environment.
-        All the classes that we didn't represent here, are the ones that we didn't consider as
+      <p>As for these last two, they are required to support WorldEdit on Minecraft through other platforms,
+        responsible for loading all the required plugins and create the functional environment.
+        All the classes that we didn't represent here, are the ones that we don't consider as
         fundamental for the analysis.</p>
 
-
-      <h2 id="sec8">Logical View</h2>
-      <hr>
-      <p>This is very important to explain stuff like "Command Manager", "Local Sessions" and "Edit Sessions".
-        Describe here</p>
-
-      <h3>Command Manager</h3>
+      <h3>Command Manager <small>A clever way of dealing with storing and detecting commands</small></h3>
       <hr>
       <p>WorldEdit's way of managing commands is very sagaciously organized. From our study and previous knowledge
       with Bukkit, we found out this command architecture is also featured in other author's plugins.
@@ -333,12 +412,13 @@
 
       <h3>Local Session</h3>
       <hr>
-      A brief introduction to local sessions and has child:
+      <p>A brief introduction to local sessions and has child:</p>
 
       <h4>Edit Session</h4>
       <hr>
-      Something about what this is.
+      <p>Something about what this is.</p>
 
+      <img class="img-responsive" src="img/Logical%20View.png">
 
 
       <h2 id="sec9">Development View</h2>
@@ -431,6 +511,43 @@
       </ul>
       An more particular example can be found at <a href="https://github.com/sk89q/WorldEdit/blob/master/
       worldedit-bukkit/src/main/resources/defaults/config.yml">config.yml</a>.
+
+
+      <h1>Contributing</h1>
+      <hr>
+      <p>WorldEdit is open to community contributions. It's also usefull if you need to create an adapter for your
+      software. However, your code must be efficient and tested.</p>
+      <p>Before cloning the project and start writing code, remember the checklist:</p>
+      <ul>
+        <li>Have all tabs been replaced into four spaces? Are indentations 4-space wide?</li>
+        <li>Have I written proper Javadocs for my public methods? Are the @param and @return fields actually filled out?</li>
+        <li>Have I git rebased my pull request to the latest commit of the target branch?</li>
+        <li>Have I combined my commits into a reasonably small number (if not one) commit using git rebase?</li>
+        <li>Have I made my pull request too large? Pull requests should introduce small sets of changes at a time.
+          Major changes should be discussed with the team prior to starting work.</li>
+        <li>Are my commit messages descriptive?</li>
+      </ul>
+
+      <h2>Branching Model</h2>
+      <hr>
+      <p>If you are not used to git, make sure to also be aware of their branching model.</p>
+      <p>To avoid consecutive merges, commit disorganization and code loss, WorldEdit follows successfull branch model
+      as the figure below.</p>
+      <p>The develop branch (integration) is the core part where developers are working. Every time a developer
+        needs to create a new feature, they open a new branch, for example <code>feature/replaceblocks</code>.
+        After the new feature has been completed, that branch can now be merged back to develop.</p>
+
+      <p>Release branches support preparation of a new production release. They allow for last-minute
+        dotting of i’s and crossing t’s. When we finish a release branch, we merge it to master.
+        The changes made on the release branch also need to be merged back into develop,
+        so that future releases also contain these bug fixes.</p>
+
+      <p>Hotfix branches are required for critical bugfixes. When completed they need to be merged back into master
+      and develop must also receive those changes.</p>
+
+      <p>This is sucessfull git production!</p>
+
+      <img class="img-responsive" src="img/gitmodel.png">
 
 
 
