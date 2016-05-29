@@ -11,7 +11,9 @@
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
   <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
@@ -249,28 +251,29 @@
       <h2>Architecture</h2>
       <hr>
       <p>
-        Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-        eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut!
-      </p>
-      <div class="row">
-        <div class="col-md-4"><img src="./img/Activity%20View.png" class="img-responsive"></div>
-        <div class="col-md-4"><img src="./img/Development%20View.png" class="img-responsive"></div>
-        <div class="col-md-4"><img src="./img/Use%20Cases.png" class="img-responsive"></div>
-      </div>
+        At this diagram we tried to only represent the important classes among all the project as this is a
+        huge project, the full class diagram wouldn't be user-friendly.
+        We tried to put all important related classes at a bucket so it will be more easy to look
+        at and explain whats happeninng.</p>
+      <p>Basically this project has three big packages (or Schemas):</p>
+
+      <ul>
+        <li><a href="https://github.com/joaolrpaulo/WorldEdit/tree/introduction/worldedit-core">WorldEdit-Core
+          </a>, this is the main project. It’s independent from any adapter.</li>
+        <li><a href="https://github.com/joaolrpaulo/WorldEdit/tree/introduction/worldedit-bukkit">WorldEdit-Bukkit
+          </a>, the adapter redirected to the Bukkit platform.</li>
+        <li><a href="https://github.com/joaolrpaulo/WorldEdit/tree/introduction/worldedit-forge">WorldEdit-Forge
+        </a>, the adapter redirected to the Forge platform.</li>
+      </ul>
+
+      <p>As for these last two, they are needed to support multiple plugins on Minecraft,
+        responsible for loading all the required plugins and create the server-type environment.
+        All the classes that we didn't represent here, are the ones that we didn't consider as
+        fundamental for the analysis.</p>
 
 
       <h3 id="sec8">Logical View</h3>
       <hr>
-      <p>
-        Images are responsive sed @mdo but sum are more fun peratis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-        eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut..</p>
 
 
       <h3 id="sec9">Development View</h3>
@@ -296,19 +299,102 @@
 
       <h2>Storage</h2>
       <hr>
-      <p>YAML here</p>
+      <h3>YAML</h3>
+      <hr>
+      <p>YAML is a encoding format that makes data more readable by human beings,
+        it was inspired in languages suchs as XML, Python, Perl, and Internet Message Protocol.
+        It was created by Clark Evans, Brian Ingerson and Oren Ben-Kiki, by the year of 2000.</p>
+      <p>YAML (pronounced as "yammel"), was designed with a very proper idea,
+        that every data could be represented by a set of list, hashes, and simple values.
+        YAML only uses unicode characters (UTF-8 and UTF-16).YAML is relatively simple to use.
+        The respective file holds the information in a
+        indented format like the example below:</p>
+      <pre>
+        Blocks:
+        - Grass
+        - Sand
+        - Stone
+
+        Users:
+          Pedro: '- Developer'
+          Marco: '* Second Developer'
+          João: '# Developer'
+          Andreia: '\ Developer'</pre>
+      <p>Within the domain of the Java language, YAML fields can be easily accessed using:</p>
+      <code style=display:block;white-space:pre-wrap>
+        yamlFile.getStringList("Blocks");
+        // Will return a list ['Grass', 'Sand', 'Stone']
+      </code>
+      <code style=display:block;white-space:pre-wrap>
+        yamlFile.getConfigurationSection('Users').getKeys(false)
+        // Will return ['Pedro', 'Marco', 'Joao', 'Andreia']
+        // We can now do:
+
+        yamlFile.getString("Users.Pedro");
+        // Will return '- Developer'
+      </code>
+      <p></p>
+      <p>In the context of the project that we have been reviewing during this semester,
+        YAML is used to store some configurations related to multiple aspects such as:</p>
+      <ul>
+        <li>User data</li>
+        <li>World data</li>
+        <li>Blocks data</li>
+        <li>Command restrictions</li>
+        <li>Zone restrictions, among others.</li>
+      </ul>
+      An more particular example can be found at <a href="https://github.com/sk89q/WorldEdit/blob/master/
+      worldedit-bukkit/src/main/resources/defaults/config.yml">config.yml</a>.
 
 
 
       <h2 id="sec13">Improving WorldEdit</h2>
       <hr>
+      <h3>The Problem</h3>
+      <hr>
+      <p>Minecraft, more specific, the Bukkit Adapter has known limitations related to asynchronous world modification.
+        If we try to run block modifications in a separate thread we will get an exception like:</p>
+
+      <blockquote style=display:block;white-space:pre-wrap>[Timer-51/WARN]: java.lang.IllegalStateException: Asynchronous block remove!</blockquote>
+
+      <p>Derived from this, World Edit core runs every task using the main thread.
+        This decision can cause complications when performing tasks with a massive number of blocks.
+        As for example, if we try to paste a schematic with 1 million blocks running World Edit in a server
+        with the following specifications:</p>
+
+      <blockquote style=display:block;white-space:pre-wrap>
+        Intel Xeon E3 1225v2 3.2 GHz+
+
+        4GB of RAM allocated to the server
+      </blockquote>
+
+      <p>The server will stop responding after a few seconds, possibly causing world chunk errors.</p>
+
+      <h3>The Solution</h3>
+      <hr>
       <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-        eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut.</p>
+        After studying the problem, it's possible to understand we can archieve an asynchronous operation
+        and still avoid to use a separate thread. We can do this by scheduling the number of blocks per a unit of time.
+        Let's take again our example of 1 million blocks. If we define a static constant of <strong>5000 blocks
+        per each second</strong>, we can schedule consecutive tasks and complete our task in about 3.33 minutes.</p>
+
+       <pre>
+         <strong>Task #1</strong>
+         Modify 5000 blocks
+         Run now
+
+         <strong>Task #2</strong>
+         Modify 5000 blocks
+         Run after 1 second
+
+         <strong>Task #3</strong>
+         Modify 5000 blocks
+         Run after 2 seconds</pre>
+      <p>
+
+      <p>After 200 tasks, we will complete our job. This method will give us the ability to see the progress
+      of our operation and avoid any world/chunk errors if the server gets shutdown. The job can be saved to
+      the disk and sustained any time.</p>
 
 
 
