@@ -73,7 +73,7 @@ The generation algoritm was made clever to develop a forest according to surroud
 ### Forest Generation
 `//forestgen [size] [type] [density]`
 
-![alt-text](https://raw.githubusercontent.com/joaolrpaulo/WorldEdit/introduction/documentation/img/ingame/forest.png)
+![alt-text](https://raw.githubusercontent.com/joaolrpaulo/WorldEdit/introduction/documentation/img/ingame/forestgen.png)
 
 ## Utility
 
