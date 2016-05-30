@@ -1,5 +1,7 @@
 # Warning! [use this instead](https://joaolrpaulo.github.io/WorldEdit)
 
+You can find each user contribution (who did what) in a file called [DIVISION.md](https://github.com/joaolrpaulo/WorldEdit/blob/introduction/documentation/DIVISION.md)
+
 This branch will contain all the base of our work. 
 For organization purposes, the content found here will be moved to the branch **gh-pages**, as HTML. Each file here will be a section on gh-pages.
 
@@ -116,7 +118,7 @@ This section is focused in creating architectural elements, like for example a s
 
 > The command searches the area around you, controlled by the size parameter, and it will descend in elevation a bit in order to find grass or dirt (trees will only be generated on top of those two blocks), but it will not ever go up above your feet.
 
-The generation algorithm was made clever to develop a forest according to surrouding area conditions. However, it is not possible to get 100% density (a tree in every spot) as Notch's (creator of Minecraft) tree algorithm won't permit that.
+The generation algorithm was made clever to develop a forest according to surrounding area conditions. However, it is not possible to get 100% density (a tree in every spot) as Notch's (creator of Minecraft) tree algorithm won't permit that.
 
 ### Generate a sphere/ellipsoid
 `//hsphere [block] [radius],[radius],[radius] [raised?]`
@@ -163,7 +165,7 @@ Figure 1 - An example of a complex architecture very hard to implement manually.
 
 ## Developers
 
-WorldEdit has a large base of community contributors. We've grouped the main motors of this project below. The 4 authours below are classified as Authours and have the most commits and activity in the active development process of the software.
+WorldEdit has a large base of community contributors. We've grouped the main motors of this project below. The 4 authors below are classified as Authors and have the most commits and activity in the active development process of the software.
 
 ![alt-text](img/ingame/contributors.png)
 Figure 2 - Contributors of the project from the github page
@@ -226,7 +228,7 @@ Command Manager will register alias "/line" with method "line(args)". Next time 
         <"line", public void line(arguments)>
 ```
 
-This architecture is extremly usefull to avoid code polution and keep different commands separated per class or category.
+This architecture is extremely useful to avoid code pollution and keep different commands separated per class or category.
 
 ### Local Session
 
@@ -252,7 +254,7 @@ We can have a better overview at the full diagram of this view:
 
 The WorldEdit is a modular tool composed by a main package, free of dependencies, and by adapters that create bounds to the plugin.
 
-Bukkit is the adapter that supports plugin connection to the game-server itself and implementing classes related to, wide range of blocks, entities and biomes. There is also a library with usefull tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.
+Bukkit is the adapter that supports plugin connection to the game-server itself and implementing classes related to, wide range of blocks, entities and biomes. There is also a library with useful tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.
 
 Core is the main package of the project. As mentioned previously, it works without dependencies, meaning it's where adapters fit. Inside the core there are several sub-packages, such as "command-related" packages that implement the control commands (CommandManager).
 
@@ -264,7 +266,7 @@ Forge is composed by all classes that make up the main component. In addition th
 
 In this process view, we decided to feature one of the most important diagrams, Activity.
 
-When the user first inputs a command, the Command Manager is responsible for implementing a method for command detection. The command manager has a dispatcher which stores the command with respective method. After efficiently checking if the command exists it proceedes to call the session manager and fetch the user session.
+When the user first inputs a command, the Command Manager is responsible for implementing a method for command detection. The command manager has a dispatcher which stores the command with respective method. After efficiently checking if the command exists it procedes to call the session manager and fetch the user session.
 
 #### Does the user session exists?
 
@@ -284,7 +286,7 @@ If no exceptions are returned, an Edit Session can now be created, this will sav
 
 ## Physical View
 
-This diagram represent where the artifacts go after being succesfully compiled and archived. After artifacts are ready, they are uploaded to multiples websites or communities, and then users can download them, and upload the correct version to their own server or client.
+This diagram represent where the artifacts go after being successfully compiled and archived. After artifacts are ready, they are uploaded to multiples websites or communities, and then users can download them, and upload the correct version to their own server or client.
 
 ![Physical View](img/World Edit Deploy.png)
 
@@ -295,7 +297,7 @@ This diagram represent where the artifacts go after being succesfully compiled a
 # Storage
 
 ## YAML
-YAML is a encoding format that makes data more readable by human beings, it was inspired in languages suchs as XML, Python, Perl, and Internet Message Protocol. It was created by Clark Evans, Brian Ingerson and Oren Ben-Kiki, by the year of 2000.
+YAML is a encoding format that makes data more readable by human beings, it was inspired in languages such as XML, Python, Perl, and Internet Message Protocol. It was created by Clark Evans, Brian Ingerson and Oren Ben-Kiki, by the year of 2000.
 
 YAML (pronounced as "yammel"), was designed with a very proper idea, that every data could be represented by a set of list, hashes, and simple values.
 YAML only uses unicode characters (UTF-8 and UTF-16)
@@ -343,7 +345,7 @@ An more particular example can be found at [config.yml](https://github.com/sk89q
 
 # Contributing
 
-WorldEdit is open to community contributions. It's also usefull if you need to create an adapter for your software. However, your code must be efficient and tested.
+WorldEdit is open to community contributions. It's also useful if you need to create an adapter for your software. However, your code must be efficient and tested.
 
 Before cloning the project and start writing code, remember the checklist:
 
@@ -358,7 +360,7 @@ Before cloning the project and start writing code, remember the checklist:
 
 If you are not used to git, make sure to also be aware of their branching model.
 
-To avoid consecutive merges, commit disorganization and code loss, WorldEdit follows successfull branch model as the figure below.
+To avoid consecutive merges, commit disorganization and code loss, WorldEdit follows successful branch model as the figure below.
 
 The develop branch (integration) is the core part where developers are working. Every time a developer needs to create a new feature, they open a new branch, for example `feature/replaceblocks`. After the new feature has been completed, that branch can now be merged back to develop.
 
@@ -408,7 +410,7 @@ The server will stop responding after a few seconds, possibly causing world chun
 
 ### The solution
 
-After studying the problem, it's possible to understand we can archieve an asynchronous operation and still avoid to use a separate thread.
+After studying the problem, it's possible to understand we can achieve an asynchronous operation and still avoid to use a separate thread.
 We can do this by scheduling the number of blocks per a unit of time.
 
 Let's take again our example of 1 million blocks. 
