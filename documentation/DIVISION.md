@@ -28,4 +28,4 @@
 * Improving World Edit
   * The problem: Pedro Lourenço
   * The solution: Pedro Lourenço
-* Conclusion: Pedro Lourenço
+* Conclusion: Pedro Lourenço after group brainstorming ideas
