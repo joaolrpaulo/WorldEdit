@@ -20,7 +20,7 @@ Figure 2 - Contributors of the project from the github page
 
 This stakeholder is made by a group of users that are part of communities like, [Bukkit](http://dev.bukkit.org) and [Forge](http://files.minecraftforge.net/). 
 These last two, are the important part that create the bounds between minecraft and plugin loading. Both create the required environment to load mods/plugins into the client.
-In our case, WorldEdit makes world management easy, like plug & play. It’s also part of the Bukkit community, along with lots of other plugins.
+In our case, WorldEdit makes world management easy, like plug & play. It’s also [part of the Bukkit community](http://dev.bukkit.org/bukkit-plugins/worldedit/), along with lots of other plugins.
 WorldEdit, however, implements a clever project structure that molds into being multi-platform using adapters.
 
 The users from communities like Bukkit or Forge, are the important part here, who need this plugin and contribute to it daily, by suggesting new features or helping to fix problems.
