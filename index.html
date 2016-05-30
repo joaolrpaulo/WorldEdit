@@ -484,7 +484,7 @@
       <p>Local Session saves history from every command made by an user,
         and helps us to know on-the-fly configurations from him. However, sessions are per user but not user bounded.</p>
       <p>Local Session is the object that contains our clipboard, a set of configurations, brushes/masks, position 1/2
-      locations and Edit Session history.</p>
+      location and Edit Session history.</p>
 
       <h4>Edit Session</h4>
       <hr>
@@ -508,8 +508,17 @@
 
       <h2 id="sec9">Development View</h2>
       <hr>
-      <p>We want to talk about the adapters and what they are usefull for. The separation of contents and easy to make
-      compatible by creating a new adapter.</p>
+      <p>The WorldEdit is a modular tool composed by a main package, free of dependencies,
+        and by adapters that create bounds to the plugin.
+      <p><a href="http://dev.bukkit.org/bukkit-plugins/worldedit/"><b>Bukkit</b></a> is the adapter that
+      supports plugin connection to the game-server itself and
+      implementing classes related to, wide range of blocks, entities and biomes. There is also a library
+      with useful tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.</p>
+      <p><b>Core</b> is the main package of the project. As mentioned previously, <b>it works without dependencies</b>,
+        meaning it's where adapters fit. Inside the core there are several sub-packages, such as "command-related"
+        packages that implement the control commands (<a href="#sec8">CommandManager</a>).</p>
+      <p><b>Forge</b> is composed by all classes that make up the main component. In addition there's a "GUI" package,
+        whose function is to handle the graphical user interface in Minecraft client associated with the adapter.</p>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Development%20View.png">
          <img class="img-responsive" src="img/Development%20View.png">
