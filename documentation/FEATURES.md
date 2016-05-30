@@ -63,7 +63,7 @@ This section is focused in creating architectural elements, like for example a s
 
 > The command searches the area around you, controlled by the size parameter, and it will descend in elevation a bit in order to find grass or dirt (trees will only be generated on top of those two blocks), but it will not ever go up above your feet.
 
-The generation algoritm was made clever to develop a forest according to surrouding area conditions. However, it is not possible to get 100% density (a tree in every spot) as Notch's (creator of Minecraft) tree algorithm won't permit that.
+The generation algorithm was made clever to develop a forest according to surrouding area conditions. However, it is not possible to get 100% density (a tree in every spot) as Notch's (creator of Minecraft) tree algorithm won't permit that.
 
 ### Generate a sphere/ellipsoid
 `//hsphere [block] [radius],[radius],[radius] [raised?]`
