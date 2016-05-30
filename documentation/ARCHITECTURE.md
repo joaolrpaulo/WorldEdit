@@ -47,7 +47,7 @@ Command Manager will register alias "/line" with method "line(args)". Next time 
         <"line", public void line(arguments)>
 ```
 
-This architecture is extremely usefull to avoid code polution and keep different commands separated per class or category.
+This architecture is extremely useful to avoid code polution and keep different commands separated per class or category.
 
 ### Local Session
 
@@ -73,7 +73,7 @@ We can have a better overview at the full diagram of this view:
 
 The WorldEdit is a modular tool composed by a main package, free of dependencies, and by adapters that create bounds to the plugin.
 
-Bukkit is the adapter that supports plugin connection to the game-server itself and implementing classes related to, wide range of blocks, entities and biomes. There is also a library with usefull tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.
+Bukkit is the adapter that supports plugin connection to the game-server itself and implementing classes related to, wide range of blocks, entities and biomes. There is also a library with useful tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.
 
 Core is the main package of the project. As mentioned previously, it works without dependencies, meaning it's where adapters fit. Inside the core there are several sub-packages, such as "command-related" packages that implement the control commands (CommandManager).
 
