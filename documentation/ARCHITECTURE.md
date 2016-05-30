@@ -47,7 +47,7 @@ Command Manager will register alias "/line" with method "line(args)". Next time 
         <"line", public void line(arguments)>
 ```
 
-This architecture is extremely useful to avoid code polution and keep different commands separated per class or category.
+This architecture is extremely useful to avoid code pollution and keep different commands separated per class or category.
 
 ### Local Session
 
@@ -85,7 +85,7 @@ Forge is composed by all classes that make up the main component. In addition th
 
 In this process view, we decided to feature one of the most important diagrams, Activity.
 
-When the user first inputs a command, the Command Manager is responsible for implementing a method for command detection. The command manager has a dispatcher which stores the command with respective method. After efficiently checking if the command exists it proceedes to call the session manager and fetch the user session.
+When the user first inputs a command, the Command Manager is responsible for implementing a method for command detection. The command manager has a dispatcher which stores the command with respective method. After efficiently checking if the command exists it procedes to call the session manager and fetch the user session.
 
 #### Does the user session exists?
 
@@ -105,7 +105,7 @@ If no exceptions are returned, an Edit Session can now be created, this will sav
 
 ## Physical View
 
-This diagram represent where the artifacts go after being succesfully compiled and archived. After artifacts are ready, they are uploaded to multiples websites or communities, and then users can download them, and upload the correct version to their own server or client.
+This diagram represent where the artifacts go after being successfully compiled and archived. After artifacts are ready, they are uploaded to multiples websites or communities, and then users can download them, and upload the correct version to their own server or client.
 
 ![Physical View](img/World Edit Deploy.png)
 
