@@ -11,7 +11,7 @@ Figure 1 - An example of a complex architecture very hard to implement manually.
 
 ## Developers
 
-WorldEdit has a large base of community contributors. We've grouped the main motors of this project below. The 4 authours below are classified as Authours and have the most commits and activity in the active development process of the software.
+WorldEdit has a large base of community contributors. We've grouped the main motors of this project below. The 4 authors below are classified as Authors and have the most commits and activity in the active development process of the software.
 
 ![alt-text](img/ingame/contributors.png)
 Figure 2 - Contributors of the project from the github page
