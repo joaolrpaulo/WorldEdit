@@ -73,11 +73,11 @@ We can have a better overview at the full diagram of this view:
 
 The WorldEdit is a modular tool composed by a main package, free of dependencies, and by adapters that create bounds to the plugin.
 
-Bukkit is the adapter that supports plugin connection to the game-server itself and implementing classes related to, wide range of blocks, entities and biomes. There is also a library with useful tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.
+Bukkit is the adapter that supports plugin connection to the game-server itself and implementing classes related to, the wide range of blocks, entities and biomes. There is also a library with useful tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.
 
 Core is the main package of the project. As mentioned previously, it works without dependencies, meaning it's where adapters fit. Inside the core there are several sub-packages, such as "command-related" packages that implement the control commands (CommandManager).
 
-Forge is composed by all classes that make up the main component. In addition there's a "GUI" package, whose function is to handle the graphical user interface in Minecraft client associated with the adapter.
+Forge is composed by all classes that make up the main component loader. In addition there's a "GUI" package, whose function is to handle the graphical user interface in Minecraft client associated with the adapter.
 
 ![Development View](img/Development View.png)
 
