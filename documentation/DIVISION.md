@@ -9,12 +9,12 @@
   * Generation: Pedro Lourenço
   * Utility: Pedro Lourenço & Marco Pontes
 * Stakeholders
-  * Developers: Pedro Lourenço & Andreia Costa
+  * Developers: Pedro Lourenço
   * Users: João Paulo & Andreia Costa
 * Architecture:
   * Logical View (Diagram + Text)
    * Command Manager: Pedro Lourenço & Marco Pontes & João Paulo
-   * Local Session: João Paulo
+   * Local Session: João Paulo & Andreia Costa
     * Edit Session: João Paulo
   * Development View (Diagram + Text): Marco Pontes
   * Process View (Diagram + Text): Pedro Lourenço  
@@ -28,4 +28,4 @@
 * Improving World Edit
   * The problem: Pedro Lourenço
   * The solution: Pedro Lourenço
-* Conclusion: Written by Pedro Lourenço after group brainstorming ideas.
+* Conclusion: Pedro Lourenço
