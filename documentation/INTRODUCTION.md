@@ -39,7 +39,7 @@ Minecraft was made in Java, and it's world is composed by chunks. Chunks are 16x
 Our architecture views along this documentation, will describe how the main components communicate with each other. Starting on the logical view up until the physical view, we can get really deeper into the structure of the project.
 
 * In the logical view, we will feature a class diagram with a description of some of the main classes or packages.
-* By the development view, a full described package diagram with the programmers prespective.
+* By the development view, a full described package diagram with the programmers perspective.
 * The process view will walk us by the activity diagram and behaviour.
 * In the physical view, the system from a system engineer's point of view. Deployment diagram will feature the topology of software components different from the last views.
 * The last view, show us some use-cases of WorldEdit.
