@@ -111,7 +111,7 @@ This diagram represent where the artifacts go after being successfully compiled 
 
 ## Scenarios
 
-When we talk about scenarios we talk about every possible case that can happen by doing or using something, this diagram, explains what can be made with this tool in a very simple and short way.
+When we talk about scenarios we talk about every possible case that can happen by doing or using something. This diagram explains what can be made with WorldEdit in a very simple and self-explanatory way.
 
 A small example of a use case description:
 
