@@ -20,7 +20,7 @@ Our introduction chapter, will be divided under two sub-sections, an user and de
 ###[WorldEdit? What it is?](http://wiki.sk89q.com/wiki/WorldEdit)
 
 WorldEdit is a world editor for Minecraft which makes users life way more easy by helping on some essentials things in
-game, like building structures, spawning objects, and manipulate them, among others. In this analysis we will talk about about how this in-game framework works, and how it is implemented "behind the hood". It holds some interesting features:
+game, like building structures, spawning objects, and manipulate them, among others. In this analysis we will talk about how this in-game framework works, and how it is implemented "behind the hood". It holds some interesting features:
 
 * Select a region of a map (like pinpoint two positions in map)
 * Fix map problems, such as broken water, missing snow, broken walls and much more!
