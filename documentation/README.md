@@ -1,11 +1,11 @@
 # Warning! [use this instead](https://joaolrpaulo.github.io/WorldEdit)
 
-You can find each user contribution (who did what) in a file called [DIVISION.md](https://github.com/joaolrpaulo/WorldEdit/blob/introduction/documentation/DIVISION.md).
-
 This branch will contain all the base of our work. 
 For organization purposes, the content found here will be moved to the branch **gh-pages**, as HTML. Each file here will be a section on gh-pages.
 
 Please do not use this version for evaluation, [use this instead](https://joaolrpaulo.github.io/WorldEdit), it's much more organized (website).
+
+You can find each user contribution (who did what) in a file called [DIVISION.md](https://github.com/joaolrpaulo/WorldEdit/blob/introduction/documentation/DIVISION.md).
 
 ![WorldEdit](img/logo2.png)
 =========
