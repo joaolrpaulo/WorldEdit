@@ -18,7 +18,7 @@ The server will stop responding after a few seconds, possibly causing world chun
 
 ### The solution
 
-After studying the problem, it's possible to understand we can archieve an asynchronous operation and still avoid to use a separate thread.
+After studying the problem, it's possible to understand we can achieve an asynchronous operation and still avoid to use a separate thread.
 We can do this by scheduling the number of blocks per a unit of time.
 
 Let's take again our example of 1 million blocks. 
