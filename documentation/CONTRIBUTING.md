@@ -15,7 +15,7 @@ Before cloning the project and start writing code, remember the checklist:
 
 If you are not used to git, make sure to also be aware of their branching model.
 
-To avoid consecutive merges, commit disorganization and code loss, WorldEdit follows successfull branch model as the figure below.
+To avoid consecutive merges, commit disorganization and code loss, WorldEdit follows successful branch model as the figure below.
 
 The develop branch (integration) is the core part where developers are working. Every time a developer needs to create a new feature, they open a new branch, for example `feature/replaceblocks`. After the new feature has been completed, that branch can now be merged back to develop.
 
