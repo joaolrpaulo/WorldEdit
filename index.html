@@ -114,13 +114,13 @@
 
       <h2 id="sec0">User View</h2>
       <hr>
-      <h3>World Edit, What is it?</h3>
+      <h3>WorldEdit, What is it?</h3>
       <hr>
       <div class="row">
         <div class="col-md-9">
           <p>WorldEdit is a world editor for Minecraft which makes users life way more easy by
             helping on some essentials things in game, like building structures, spawning objects,
-            and manipulate them, among others. In this analysis we will talk about about how this in-game
+            and manipulate them, among others. In this analysis we will talk about how this in-game
             framework works, and how it is implemented "behind the hood".
 
             It holds some interesting features:</p>
@@ -138,6 +138,7 @@
         </div>
         <div class="col-md-3">
           <img class="img-responsive circle-image" src="img/worldedit.png">
+          <small>Figure 1 - Selection for decorative purposes</small>
         </div>
       </div>
 
@@ -150,13 +151,13 @@
             of Minecraft itself.</p>
           <p>Minecraft was made in Java, and it's world is composed by chunks. Chunks are 16x16x256 segments, and they
             are generated around players when they first enter the world. As they walk around, chunks are generated as
-            needed. They can also be forced to load into memory by world management tools, such as World Edit.</p>
+            needed. They can also be forced to load into memory by world management tools, such as WorldEdit.</p>
           <p>Our architecture views along this documentation, will describe how the main components communicate
             with each other. Starting on the logical view up until the physical view, we can get really deeper into
             the structure of the project.</p>
           <ul>
             <li>In the logical view, we will feature a class diagram with a description of some of the main classes or packages.</li>
-            <li>By the development view, a full described package diagram with the programmers prespective.</li>
+            <li>By the development view, a full described package diagram with the programmers perspective.</li>
             <li>The process view will walk us by the activity diagram and behaviour.</li>
             <li>In the physical view, the system from a system engineer's point of view. Deployment diagram will feature
               the topology of software components different from the last views.</li>
@@ -165,21 +166,22 @@
         </div>
         <div class="col-md-2">
           <img height="300" width="80" src="img/chunk.png">
+          <p class="small">Figure 2 - Chunk</p>
         </div>
       </div>
 
 
       <h1>Features <small>Very summarized overview with main functions</small></h1>
       <hr>
-      <p>We will omit most command sintaxe. However, a detailed overview of all commands
+      <p>We will omit most command syntax. However, a detailed overview of all commands
         can be found in the <a href="http://wiki.sk89q.com/wiki/WorldEdit">official documentation</a>.</p>
 
 
       <h2 id="sec2">Region Operations</h2>
       <hr>
-      <p>It's possible to perform a long range of region operations with World Edit.</p>
+      <p>It's possible to perform a long range of region operations with WorldEdit.</p>
       <p>To perform those kind of operations, the user is required to select a Cuboid area. This is done by selecting
-      two points which will create a rectangular selecion (other shapes and formats can also be used).</p>
+      two points which will create a rectangular selection (other shapes and formats can also be used).</p>
       <p>Using the selected area, we can perform changes like:</p>
       <ul>
         <li>Setting Blocks</li>
@@ -195,13 +197,14 @@
       </ul>
       <div class="blockquote-box blockquote-primary">
         <h4>
-          Region Selecion</h4>
+          Region Selection</h4>
         <p>
           Usage: //wand <small>[Gives user an item that can be used to flag first position (left click) and second position (right click)]</small>
         </p><p>Usage: //pos1 or //pos2 <small>[Selects first and second positions]</small>
       </p>
       </div>
       <img src="img/ingame/cuboid.png">
+      <small>Figure 3 - Cuboid example</small>
 
       <br><br>
       <p>Some examples of region operations are:</p>
@@ -215,6 +218,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/replaceblocks.png">
                 <img width="418" height="350" src="img/ingame/replaceblocks.png">
+                <small>Figure 4 - Example of replacing blocks</small>
               </a>
             </div>
           </div>
@@ -228,6 +232,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/stacking.jpg">
                 <img width="418" height="350" src="img/ingame/stacking.jpg">
+                <small>Figure 5 - Example of stacking</small>
               </a>
             </div>
           </div>
@@ -252,6 +257,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/copypaste.png">
                 <img width="418" height="350" src="img/ingame/copypaste.png">
+                <small>Figure 6 - Example of copy paste</small>
               </a>
             </div>
           </div>
@@ -265,6 +271,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/schematic.png">
                 <img width="418" height="350" src="img/ingame/schematic.png">
+                <small>Figure 7 - List of schematics in WorldEdit's directory</small>
               </a>
             </div>
           </div>
@@ -282,7 +289,7 @@
         and it will descend in elevation a bit in order to find grass or dirt (trees will only be generated
         on top of those two blocks),
         but it will not ever go up above your feet.</blockquote>
-      <p>The generation algoritm was made clever to develop a forest according to surrouding area conditions. However,
+      <p>The generation algorithm was made clever to develop a forest according to surrounding area conditions. However,
       it is not possible to get 100% density (a tree in every spot) as Notch's (creator of Minecraft)
       tree algorithm won't permit that.</p>
       <div class="row">
@@ -295,6 +302,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/hsphere.png">
                 <img width="418" height="350" src="img/ingame/hsphere.png">
+                <small>Figure 8 - Generation of stone sphere</small>
               </a>
             </div>
           </div>
@@ -308,6 +316,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/forestgen.png">
                 <img width="418" height="350" src="img/ingame/forestgen.png">
+                <small>Figure 9 - Forest generation</small>
               </a>
             </div>
           </div>
@@ -339,6 +348,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/brushsphere.png">
                 <img width="418" height="350" src="img/ingame/brushsphere.png">
+                <small>Figure 10 - Sphere brush example</small>
               </a>
             </div>
           </div>
@@ -352,6 +362,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/brushsmooth.png">
                 <img width="418" height="350" src="img/ingame/brushsmooth.png">
+                <small>Figure 11 - Smooth brush example (Before: Figure 10)</small>
               </a>
             </div>
           </div>
@@ -368,12 +379,13 @@
         we can conclude this by the large amount of users depending on it <code>13,963,291 downloads on 28/05/2016</code>.</p>
 
       <img class="img-responsive" src="img/construction.jpeg">
+      <small>Figure 12 - Example of a complex construction which would be hard to develop manually. Credits: Everbloom Studios Team</small>
 
 
       <h2 id="sec6">Developers</h2>
       <hr>
       <p>WorldEdit has a large base of community contributors. We've grouped the main motors of this project below.
-        The 4 authours below are classified as Authours and have the most commits and activity in the active
+        The 4 authors below are classified as Authors and have the most commits and activity in the active
         development process of the software.</p>
       <div class="row no-gutter">
         <div class="col-md-6">
@@ -476,7 +488,7 @@
 
         &lt;<span style="color: orange;">"line"</span>, <span style="color: blue;">public void</span> line(arguments)</span>&gt;</pre>
 
-      <p>This architecture is extremly usefull to avoid code polution and keep different commands separated per class or
+      <p>This architecture is extremely useful to avoid code pollution and keep different commands separated per class or
       category.</p>
 
       <h3>Local Session</h3>
@@ -488,7 +500,7 @@
 
       <h4>Edit Session</h4>
       <hr>
-      <p>Every time we make an operation, World Edit creates an Edit Session with the set of blocks we changed. This type
+      <p>Every time we make an operation, WorldEdit creates an Edit Session with the set of blocks we changed. This type
       of session is saved as a list inside Local Session. If a user wants to undo, or redo, local session has all the
       history saved as a list of Edit Session objects. So, we can easy go back in our history.</p>
       <p>It's inside the Edit Session we find the main methods for world operations like:</p>
@@ -502,6 +514,7 @@
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Logical%20View.png">
           <img class="img-responsive" src="img/Logical%20View.png">
+          <small>Figure 13 - Logical View Diagram </small>
         </a>
       </div>
 
@@ -521,7 +534,8 @@
         whose function is to handle the graphical user interface in Minecraft client associated with the adapter.</p>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Development%20View.png">
-         <img class="img-responsive" src="img/Development%20View.png">
+          <img class="img-responsive" src="img/Development%20View.png">
+          <small>Figure 14 - Development View Diagram</small>
         </a>
       </div>
 
@@ -532,7 +546,7 @@
       <p>When the user first inputs a command, the Command Manager is responsible for implementing a method for
       command detection. The command manager has a dispatcher which
         <a href="#sec8">stores the command with respective method</a>. After efficiently checking if the command exists
-        it proceedes to call the session manager and fetch the user session.</p>
+        it proceeds to call the session manager and fetch the user session.</p>
       <h4>Does the user session exists?</h4>
       <p>If session manager doesn't have any entry for that user, we will create one and return to the command manager.
         Otherwise, the already created session will be returned.</p>
@@ -548,18 +562,20 @@
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Activity%20View.png">
           <img class="img-responsive" src="img/Activity%20View.png">
+          <small>Figure 15 - Process View Diagram</small>
         </a>
       </div>
 
 
       <h2 id="sec11">Physical View</h2>
       <hr>
-      <p>This diagram represent where the artifacts go after being succesfully compiled and archived.
+      <p>This diagram represent where the artifacts go after being successfully compiled and archived.
         After artifacts are ready, they are uploaded to multiples websites or communities, and then
         users can download them, and upload the correct version to their own server or client.</p>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Physical%20View.png">
           <img class="img-responsive" src="img/Physical%20View.png">
+          <small>Figure 16 - Physical View</small>
         </a>
       </div>
 
@@ -570,6 +586,7 @@
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Use%20Cases.png">
           <div class="col-md-12" align="center"><img src="img/Use%20Cases.png"></div>
+          <small>Figure 17 - Scenarios</small>
         </a>
       </div>
 
@@ -580,7 +597,7 @@
       <h2 id="sec13">YAML</h2>
       <hr>
       <p>YAML is a encoding format that makes data more readable by human beings,
-        it was inspired in languages suchs as XML, Python, Perl, and Internet Message Protocol.
+        it was inspired in languages such as XML, Python, Perl, and Internet Message Protocol.
         It was created by Clark Evans, Brian Ingerson and Oren Ben-Kiki, by the year of 2000.</p>
       <p>YAML (pronounced as "yammel"), was designed with a very proper idea,
         that every data could be represented by a set of list, hashes, and simple values.
@@ -627,7 +644,7 @@
 
       <h1>Contributing</h1>
       <hr>
-      <p>WorldEdit is open to community contributions. It's also usefull if you need to create an adapter for your
+      <p>WorldEdit is open to community contributions. It's also useful if you need to create an adapter for your
       software. However, your code must be efficient and tested.</p>
       <p>Before cloning the project and start writing code, remember the checklist:</p>
       <ul>
@@ -643,7 +660,7 @@
       <h2 id="sec14">Branching Model</h2>
       <hr>
       <p>If you are not used to git, make sure to also be aware of their branching model.</p>
-      <p>To avoid consecutive merges, commit disorganization and code loss, WorldEdit follows successfull branch model
+      <p>To avoid consecutive merges, commit disorganization and code loss, WorldEdit follows successful branch model
       as the figure below.</p>
       <p>The develop branch (integration) is the core part where developers are working. Every time a developer
         needs to create a new feature, they open a new branch, for example <code>feature/replaceblocks</code>.
@@ -657,9 +674,10 @@
       <p>Hotfix branches are required for critical bugfixes. When completed they need to be merged back into master
       and develop must also receive those changes.</p>
 
-      <p>This is sucessfull git production!</p>
+      <p>This is successful git production!</p>
 
       <img class="img-responsive" src="img/gitmodel.png">
+      <small>Figure 18 - Successful Git Model</small>
 
       <h2 id="sec15">Compiling</h2>
       <hr>
@@ -673,6 +691,7 @@
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/compiling.png" style="margin-bottom:20px;">
           <div class="col-md-12" align="center"><img src="img/compiling.png"></div>
+          <small>Figure 19 - Compiling WorldEdit</small>
         </a>
       </div>
 
@@ -687,6 +706,7 @@
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/compiling3.png" style="margin-bottom:20px;">
           <div class="col-md-12" align="center"><img src="img/compiling3.png"></div>
+          <small>Figure 20 - Result of compiling WorldEdit</small>
         </a>
       </div>
 
@@ -700,9 +720,9 @@
 
       <blockquote style=display:block;white-space:pre-wrap>[Timer-51/WARN]: java.lang.IllegalStateException: Asynchronous block remove!</blockquote>
 
-      <p>Derived from this, World Edit core runs every task using the main thread.
+      <p>Derived from this, WorldEdit core runs every task using the main thread.
         This decision can cause complications when performing tasks with a massive number of blocks.
-        As for example, if we try to paste a schematic with 1 million blocks running World Edit in a server
+        As for example, if we try to paste a schematic with 1 million blocks running WorldEdit in a server
         with the following specifications:</p>
 
       <blockquote style=display:block;white-space:pre-wrap>
@@ -716,7 +736,7 @@
       <h2>The Solution</h2>
       <hr>
       <p>
-        After studying the problem, it's possible to understand we can archieve an asynchronous operation
+        After studying the problem, it's possible to understand we can achieve an asynchronous operation
         and still avoid to use a separate thread. We can do this by scheduling the number of blocks per a unit of time.
         Let's take again our example of 1 million blocks. If we define a static constant of <strong>5000 blocks
         per each second</strong>, we can schedule consecutive tasks and complete our task in about 3.33 minutes.</p>
@@ -772,6 +792,9 @@
       And that's what we've learned!
 
       <img class="img-responsive" src="img/architecture.jpg">
+      <p class="small">Figure 21 - Complex Architecture</p>
+
+      <p class="small">Website designed by <a href="https://github.com/pedroo21">Pedro Lourenço</a></p>
 
     </div><!--/right-->
   </div><!--/row-->
