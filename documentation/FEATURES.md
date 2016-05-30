@@ -1,6 +1,6 @@
 # Features
 
-We will omit most command sintaxe. However, a detailed overview of all commands can be found in the [official documentation](http://wiki.sk89q.com/wiki/WorldEdit).
+We will omit most command syntax. However, a detailed overview of all commands can be found in the [official documentation](http://wiki.sk89q.com/wiki/WorldEdit).
 
 ## Region Operations
 
