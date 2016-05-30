@@ -71,6 +71,14 @@ We can have a better overview at the full diagram of this view:
 
 ## Development View
 
+The WorldEdit is a modular tool composed by a main package, free of dependencies, and by adapters that create bounds to the plugin.
+
+Bukkit is the adapter that supports plugin connection to the game-server itself and implementing classes related to, wide range of blocks, entities and biomes. There is also a library with usefull tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.
+
+Core is the main package of the project. As mentioned previously, it works without dependencies, meaning it's where adapters fit. Inside the core there are several sub-packages, such as "command-related" packages that implement the control commands (CommandManager).
+
+Forge is composed by all classes that make up the main component. In addition there's a "GUI" package, whose function is to handle the graphical user interface in Minecraft client associated with the adapter.
+
 ![Development View](img/Development View.png)
 
 ## Process View
@@ -83,7 +91,7 @@ When the user first inputs a command, the Command Manager is responsible for imp
 
 If session manager doesn't have any entry for that user, we will create one and return to the command manager. Otherwise, the already created session will be returned.
 
-#### Back to the command Mpanager
+#### Back to the command Manager
 
 Command manager will now call the dispatcher to run the method associated to the input command.
 
