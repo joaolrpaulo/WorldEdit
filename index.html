@@ -138,7 +138,7 @@
         </div>
         <div class="col-md-3">
           <img class="img-responsive circle-image" src="img/worldedit.png">
-          <small>Figure 1 - Selection for decorative purposes</small>
+          <p class="small">Figure 1 - Selection for decorative purposes</p>
         </div>
       </div>
 
@@ -218,7 +218,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/replaceblocks.png">
                 <img width="418" height="350" src="img/ingame/replaceblocks.png">
-                <small>Figure 4 - Example of replacing blocks</small>
+                <p class="small">Figure 4 - Example of replacing blocks</p>
               </a>
             </div>
           </div>
@@ -232,7 +232,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/stacking.jpg">
                 <img width="418" height="350" src="img/ingame/stacking.jpg">
-                <small>Figure 5 - Example of stacking</small>
+                <p class="small">Figure 5 - Example of stacking</p>
               </a>
             </div>
           </div>
@@ -257,7 +257,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/copypaste.png">
                 <img width="418" height="350" src="img/ingame/copypaste.png">
-                <small>Figure 6 - Example of copy paste</small>
+                <p class="small">Figure 6 - Example of copy paste</p>
               </a>
             </div>
           </div>
@@ -271,7 +271,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/schematic.png">
                 <img width="418" height="350" src="img/ingame/schematic.png">
-                <small>Figure 7 - List of schematics in WorldEdit's directory</small>
+                <p class="small">Figure 7 - List of schematics in WorldEdit's directory</p>
               </a>
             </div>
           </div>
@@ -302,7 +302,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/hsphere.png">
                 <img width="418" height="350" src="img/ingame/hsphere.png">
-                <small>Figure 8 - Generation of stone sphere</small>
+                <p class="small">Figure 8 - Generation of stone sphere</p>
               </a>
             </div>
           </div>
@@ -316,7 +316,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/forestgen.png">
                 <img width="418" height="350" src="img/ingame/forestgen.png">
-                <small>Figure 9 - Forest generation</small>
+                <p class="small">Figure 9 - Forest generation</p>
               </a>
             </div>
           </div>
@@ -348,7 +348,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/brushsphere.png">
                 <img width="418" height="350" src="img/ingame/brushsphere.png">
-                <small>Figure 10 - Sphere brush example</small>
+                <p class="small">Figure 10 - Sphere brush example</p>
               </a>
             </div>
           </div>
@@ -362,7 +362,7 @@
             <div class="panel-body">
               <a class="fancybox" rel="group" href="img/ingame/brushsmooth.png">
                 <img width="418" height="350" src="img/ingame/brushsmooth.png">
-                <small>Figure 11 - Smooth brush example (Before: Figure 10)</small>
+                <p class="small">Figure 11 - Smooth brush example (Before: Figure 10)</p>
               </a>
             </div>
           </div>
@@ -379,13 +379,13 @@
         we can conclude this by the large amount of users depending on it <code>13,963,291 downloads on 28/05/2016</code>.</p>
 
       <img class="img-responsive" src="img/construction.jpeg">
-      <small>Figure 12 - Example of a complex construction which would be hard to develop manually. Credits: Everbloom Studios Team</small>
+      <p class="small">Figure 12 - Example of a complex construction which would be hard to develop manually. Credits: Everbloom Studios Team</p>
 
 
       <h2 id="sec6">Developers</h2>
       <hr>
       <p>WorldEdit has a large base of community contributors. We've grouped the main motors of this project below.
-        The 4 authors below are classified as Authors and have the most commits and activity in the active
+        The 4 users below are classified as authors and have the most commits and activity in the active
         development process of the software.</p>
       <div class="row no-gutter">
         <div class="col-md-6">
@@ -409,7 +409,7 @@
       <hr>
       <p>This stakeholder is made by a group of users that are part of communities like, Bukkit and Forge.
         These last two, are the important part that create the bounds between minecraft and plugin loading.
-        Both create the required environment to load mods/plugins into the client. In our case, WorldEdit makes
+        Both conceive the required environment to load mods/plugins into the client. In our case, WorldEdit makes
         world management easy, like plug & play. It’s also
         <a href="http://dev.bukkit.org/bukkit-plugins/worldedit/">part of the Bukkit community</a>, along with
         lots of other plugins. WorldEdit, however, implements a clever project structure that molds into
@@ -525,12 +525,12 @@
         and by adapters that create bounds to the plugin.
       <p><a href="http://dev.bukkit.org/bukkit-plugins/worldedit/"><b>Bukkit</b></a> is the adapter that
       supports plugin connection to the game-server itself and
-      implementing classes related to, wide range of blocks, entities and biomes. There is also a library
+      implementing classes related to, the wide range of blocks, entities and biomes. There is also a library
       with useful tools for Bukkit commands and classes that provide an internal permissions system to WorldEdit.</p>
       <p><b>Core</b> is the main package of the project. As mentioned previously, <b>it works without dependencies</b>,
         meaning it's where adapters fit. Inside the core there are several sub-packages, such as "command-related"
         packages that implement the control commands (<a href="#sec8">CommandManager</a>).</p>
-      <p><b>Forge</b> is composed by all classes that make up the main component. In addition there's a "GUI" package,
+      <p><b>Forge</b> is composed by all classes that make up the main component loader. In addition there's a "GUI" package,
         whose function is to handle the graphical user interface in Minecraft client associated with the adapter.</p>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Development%20View.png">
@@ -582,7 +582,18 @@
 
       <h2 id="sec12">Scenarios</h2>
       <hr>
-      <p></p>
+      <p>When we talk about scenarios we talk about every possible case that can happen by doing or using something,
+        this diagram, explains what can be made with this tool in a very simple and short way.</p>
+      <p>A small example of a use case description:</p>
+
+      <ul>
+        <li>Use Case: Create/Replace/Delete thousands of blocks</li>
+        <li>Actor: Minecraft User</li>
+        <li>Scope: A Minecraft server</li>
+        <li>Brief: Wants to replace 10 blocks of sand by grass</li>
+        <li>Precondition: Needs permissions on server to do it</li>
+        <li>Postcondition: Those 10 blocks should be grass</li>
+      </ul>
       <div class="container-corners">
         <a class="fancybox" rel="group" href="img/Use%20Cases.png">
           <div class="col-md-12" align="center"><img src="img/Use%20Cases.png"></div>
