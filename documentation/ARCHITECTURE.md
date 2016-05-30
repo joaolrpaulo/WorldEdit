@@ -47,7 +47,7 @@ Command Manager will register alias "/line" with method "line(args)". Next time 
         <"line", public void line(arguments)>
 ```
 
-This architecture is extremly usefull to avoid code polution and keep different commands separated per class or category.
+This architecture is extremely usefull to avoid code polution and keep different commands separated per class or category.
 
 ### Local Session
 
