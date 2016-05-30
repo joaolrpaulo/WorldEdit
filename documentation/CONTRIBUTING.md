@@ -1,6 +1,6 @@
 # Contributing
 
-WorldEdit is open to community contributions. It's also usefull if you need to create an adapter for your software. However, your code must be efficient and tested.
+WorldEdit is open to community contributions. It's also useful if you need to create an adapter for your software. However, your code must be efficient and tested.
 
 Before cloning the project and start writing code, remember the checklist:
 
