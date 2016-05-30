@@ -12,15 +12,15 @@
   * Developers: Pedro Lourenço & Andreia Costa
   * Users: João Paulo & Andreia Costa
 * Architecture:
-  * Logical View
+  * Logical View (Diagram + Text)
    * Command Manager: Pedro Lourenço & Marco Pontes & João Paulo
    * Local Session: João Paulo
     * Edit Session: João Paulo
-  * Command Manager: Pedro Lourenço
-  * Development View: Marco Pontes
-  * Process View: Pedro Lourenço  
-  * Physical View: Andreia Costa
-  * Scenarios: Pedro Lourenço & João Paulo
+  * Command Manager (Diagram + Text): Pedro Lourenço
+  * Development View (Diagram + Text): Marco Pontes
+  * Process View (Diagram + Text): Pedro Lourenço  
+  * Physical View (Diagram + Text): Andreia Costa
+  * Scenarios (Diagram): Pedro Lourenço & João Paulo
 * Storage
   * YAML: João Paulo
 * Contributing
