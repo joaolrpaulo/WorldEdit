@@ -21,7 +21,7 @@ Using the selected area, we can perform changes like:
 * Placing flora, scatter tall grass and flowers for grass or cactus for sand
 * Deform regions, applying a user defined equation
 
-**Region Selecion**
+**Region Selection**
 ```
 Usage: //wand [Gives user an item that can be used to flag first position (left click) and second position (right click)]
 Usage: //pos1 or //pos2 [Selects first and second positions]
