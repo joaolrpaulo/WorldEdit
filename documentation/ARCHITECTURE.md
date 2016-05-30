@@ -91,7 +91,7 @@ Command manager will now call the dispatcher to run the method associated to the
 
 If not exceptions will be returned, caught to deliver a specific messaged associated to the error.
 
-If no exceptions are returned, an Edit Session can now be created, this will save all our modifications for later undo/redo case. The command class will then receive the session and execute the commands through it ([more about how this happens](##Logical View)).
+If no exceptions are returned, an Edit Session can now be created, this will save all our modifications for later undo/redo case. The command class will then receive the session and execute the commands through it ([more about how this happens](## Logical View)).
 
 ![Process View](img/Activity View.png)
 
