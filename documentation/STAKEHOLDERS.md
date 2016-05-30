@@ -11,7 +11,7 @@ Figure 1 - An example of a complex architecture very hard to implement manually.
 
 ## Developers
 
-WorldEdit has a large base of community contributors. We've grouped the main motors of this project below. The 4 authors below are classified as Authors and have the most commits and activity in the active development process of the software.
+WorldEdit has a large base of community contributors. We've grouped the main motors of this project below. The 4 users below are classified as authors and have the most commits and activity in the active development process of the software.
 
 ![alt-text](img/ingame/contributors.png)
 Figure 2 - Contributors of the project from the github page
@@ -19,7 +19,7 @@ Figure 2 - Contributors of the project from the github page
 ## Users
 
 This stakeholder is made by a group of users that are part of communities like, [Bukkit](http://dev.bukkit.org) and [Forge](http://files.minecraftforge.net/). 
-These last two, are the important part that create the bounds between minecraft and plugin loading. Both create the required environment to load mods/plugins into the client.
+These last two, are the important part that create the bounds between minecraft and plugin loading. Both conceive the required environment to load mods/plugins into the client.
 In our case, WorldEdit makes world management easy, like plug & play. It’s also [part of the Bukkit community](http://dev.bukkit.org/bukkit-plugins/worldedit/), along with lots of other plugins.
 WorldEdit, however, implements a clever project structure that molds into being multi-platform using adapters.
 
