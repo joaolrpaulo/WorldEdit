@@ -113,6 +113,13 @@ This diagram represent where the artifacts go after being successfully compiled 
 
 When we talk about scenarios we talk about every possible case that can happen by doing or using something, this diagram, explains what can be made with this tool in a very simple and short way.
 
-Every Use Case, is a step of actions that leads us to a wanted goal, and the actor is a Minecraft Player.
+A small example of a use case description:
+
+* Use Case: Create/Replace/Delete thousands of blocks
+* Actor: Minecraft User
+* Scope: A Minecraft server
+* Brief: Wants to replace 10 blocks of sand by grass
+* Precondition: Needs permissions on server to do it
+* Postcondition: Those 10 blocks should be grass
 
 ![Use Cases](img/Use Cases.png)
